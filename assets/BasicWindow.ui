@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1187</width>
-    <height>821</height>
+    <height>653</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,7 +15,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-    background-color: rgb(34, 40, 49);
+    background-color: #282322;
 	color: rgb(255, 255, 255)
 }
 </string>
@@ -23,8 +23,16 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;The &lt;/span&gt;BASIC&lt;span style=&quot; font-weight:400;&quot;&gt; preset makes your computer look and work better.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;It moves the taskbar to the &lt;/span&gt;left and turns on dark&lt;span style=&quot; font-weight:400;&quot;&gt; mode.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;It makes menus and windows &lt;/span&gt;open faster&lt;span style=&quot; font-weight:400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;It &lt;/span&gt;stops some background apps&lt;span style=&quot; font-weight:400;&quot;&gt; that slow things down.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;It removes&lt;/span&gt; Microsoft Edge and makes Windows run smoother&lt;span style=&quot; font-weight:400;&quot;&gt; using Chris Titus Tech’s Windows Utility.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;This is great for people who want their computer to be faster and easier to use &lt;br/&gt;without doing anything complicated!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>

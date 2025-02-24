@@ -6,16 +6,23 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1194</width>
+    <width>1281</width>
     <height>726</height>
    </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>Microsoft YaHei UI</family>
+    <weight>75</weight>
+    <bold>true</bold>
+   </font>
   </property>
   <property name="windowTitle">
    <string>Form</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget {
-    background-color: rgb(34, 40, 49);
+    background-color: #282322;
 	color: rgb(255, 255, 255)
 }
 </string>
@@ -23,8 +30,15 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QLabel" name="label">
+     <property name="font">
+      <font>
+       <family>Microsoft YaHei UI</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
      <property name="text">
-      <string>TextLabel</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;The &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;PROFESSIONAL&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt; preset makes your computer ready for work.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;It moves the taskbar to the &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;left and turns on dark&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt; mode.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;It makes menus and &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;windows open faster&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;It &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;stops some background apps&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt; that slow things down.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;It &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;removes Microsoft Edge and helps Windows run smoother&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt; using Chris Titus Tech’s Windows Utility.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;&lt;br/&gt;&lt;/span&gt;&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;It also installs important apps like &lt;/span&gt;&lt;span style=&quot; font-size:16pt;&quot;&gt;Python, .NET Runtime, Git, Visual Studio Code, Unity Hub, Visual Studio, and Spotify.&lt;/span&gt;&lt;span style=&quot; font-size:16pt; font-weight:400;&quot;&gt;&lt;br/&gt;This is perfect for professionals who want their computer set up and ready for work without any hassle!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>

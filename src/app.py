@@ -53,13 +53,6 @@ class App:
         
     def run_preset(self, preset_name:str ) -> None:
         try:
-            apply_registry_changes()
-            run_winconfig()
-        except:
-            log.log_error("Error: Failed to run debloat_windows.")
-            return None
-        
-        try:
             if not self.presets_in_list(preset_name):
                 log.log_error(f"Error: Preset '{preset_name}' not found in the list of presets.")
                 print(f"Error: Preset '{preset_name}' not found in the list of presets.")
@@ -75,4 +68,12 @@ class App:
             log.log_error(f"Error: File '{self.preset_path_dir}' not found.")
             return None
 
+        try:
+            apply_registry_changes()
+            run_winconfig()
+        except:
+            log.log_error("Error: Failed to run debloat_windows.")
+            return None
+        
+        
 
