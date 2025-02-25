@@ -57,7 +57,13 @@ class App:
                 log.log_error(f"Error: Preset '{preset_name}' not found in the list of presets.")
                 print(f"Error: Preset '{preset_name}' not found in the list of presets.")
                 return None
-
+    
+            # Load preset data to verify it before proceeding
+            preset_data = self.run_preset_test(preset_name)
+            if preset_data is None:
+                log.log_error(f"Error: Failed to load preset data for '{preset_name}'")
+                return None
+                
             try:
                 install_preset(preset_name)
             except Exception as e:
@@ -67,13 +73,10 @@ class App:
         except FileNotFoundError:
             log.log_error(f"Error: File '{self.preset_path_dir}' not found.")
             return None
-
+    
         try:
             apply_registry_changes()
             run_winconfig()
-        except:
-            log.log_error("Error: Failed to run debloat_windows.")
+        except Exception as e:
+            log.log_error(f"Error: Failed to run debloat_windows: {e}")
             return None
-        
-        
-

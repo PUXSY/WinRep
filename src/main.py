@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 from PyQt5_UI import run_app, SubWindow
 from app import App
 from pathlib import Path
@@ -5,9 +7,17 @@ from logger import logger
 import ctypes
 import sys
 
+base_dir = Path(__file__).resolve().parent.parent
+presets_dir = base_dir / "presets"
+
+if not presets_dir.exists():
+    os.makedirs(presets_dir, exist_ok=True)
+
+
+app = App(presets_dir)
 log = logger()
 
-app = App(Path("./presets")) 
+
 def is_running_as_admin():
     try:
         return ctypes.windll.shell32.IsUserAnAdmin() != 0

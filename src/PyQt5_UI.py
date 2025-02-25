@@ -77,9 +77,17 @@ class SubWindow(BaseWindow):
         if preset_name and self.app_instance:
             try:
                 test_result = self.app_instance.run_preset_test(preset_name)
+                if test_result is None:
+                    QMessageBox.critical(self, "Error", f"Could not find or load preset file: {preset_name}")
+                    return
+                    
                 if test_result:
-                    self.app_instance.run_preset(preset_name)
-                    QMessageBox.information(self, "Success", f"Successfully applied {preset_name} preset!")
+                    try:
+                        self.app_instance.run_preset(preset_name)
+                        QMessageBox.information(self, "Success", f"Successfully applied {preset_name} preset!")
+                    except Exception as e:
+                        log.log_error(f"Error running preset: {str(e)}")
+                        QMessageBox.critical(self, "Error", f"Error running preset: {str(e)}")
                 else:
                     QMessageBox.warning(self, "Error", f"Failed to test {preset_name} preset!")
             except Exception as e:
