@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>exclamation.png</file>
+    <file>home.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,22 @@
+{
+    "Basic":{
+        "Name":"Basic",
+        "Description":"Stract",
+        "JsonPath":"./Basic.json"
+    },
+    "Gaming":{
+        "Name":"Gaming",
+        "Description":"Stract",
+        "JsonPath":"./Gaming.json"
+    },
+    "Profesional":{
+        "Name":"Profesional",
+        "Description":"Stract",
+        "JsonPath":"./Basic.json"
+    },  
+    "Custom":{
+        "Name":"Custom",
+        "Description":"Stract",
+        "JsonPath":"./Basic.json"
+    }
+}

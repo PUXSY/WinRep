@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="bg">
+    <file>WinRep.png</file>
+    <file>background image.jpg</file>
+    <file>Button_BG.jpg</file>
+  </qresource>
+</RCC>

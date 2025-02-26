@@ -1,0 +1,7 @@
+{
+  "Install": 
+    {
+      "winget": "Google.Chrome",
+      "choco": "googlechrome"
+    }
+}

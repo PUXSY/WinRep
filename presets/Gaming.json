@@ -1,0 +1,32 @@
+{
+"Install": [
+  {
+    "winget": "EpicGames.EpicGamesLauncher",
+    "choco": "epicgameslauncher"
+  },
+  {
+    "winget": "OBSProject.OBSStudio",
+    "choco": "obs-studio"
+  },
+  {
+    "winget": "Discord.Discord",
+    "choco": "discord"
+  },
+  {
+    "winget": "Valve.Steam",
+    "choco": "steam-client"
+  },
+  {
+    "winget": "ElectronicArts.EADesktop",
+    "choco": "ea-app"
+  },
+  {
+    "winget": "Spotify.Spotify",
+    "choco": "spotify"
+  },
+  {
+    "winget": "Google.Chrome",
+    "choco": "googlechrome"
+  }
+]
+}

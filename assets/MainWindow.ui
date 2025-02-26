@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1187</width>
+    <height>586</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+    background-color: #282322;
+	color: rgb(255, 255, 255)
+}
+</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>320</width>
+     <height>570</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="Basic_Butten">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>63</y>
+      <width>300</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <pointsize>26</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Go to Basic Option&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #FD7014;
+    background-image: url(:/bg/Button_BG.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 40px;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton:hover {
+    background-color: #E65C00; 
+}
+
+QPushButton:pressed {
+    background-color: #CC4D00; 
+}
+
+QPushButton {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Basic</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Gaming_Butten">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>188</y>
+      <width>300</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <pointsize>26</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Go to Gaming Option&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #FD7014;
+    background-image: url(:/bg/Button_BG.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 40px;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton:hover {
+    background-color: #E65C00; 
+}
+
+QPushButton:pressed {
+    background-color: #CC4D00; 
+}
+
+QPushButton {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Gaming</string>
+    </property>
+    <property name="autoDefault">
+     <bool>false</bool>
+    </property>
+    <property name="default">
+     <bool>false</bool>
+    </property>
+    <property name="flat">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Professional_Butten">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>313</y>
+      <width>300</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <pointsize>26</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Go to Professional Option&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #FD7014;
+    background-image: url(:/bg/Button_BG.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 40px;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton:hover {
+    background-color: #E65C00; 
+}
+
+QPushButton:pressed {
+    background-color: #CC4D00; 
+}
+
+QPushButton {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Professional</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Custom_Butten">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>438</y>
+      <width>300</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Microsoft YaHei</family>
+      <pointsize>26</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="toolTip">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Go to Custom Option&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+    background-color: #FD7014;
+    background-image: url(:/bg/Button_BG.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 40px;
+    color: rgb(255, 255, 255);
+}
+
+QPushButton:hover {
+    background-color: #E65C00; 
+}
+
+QPushButton:pressed {
+    background-color: #CC4D00; 
+}
+
+QPushButton {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+}
+</string>
+    </property>
+    <property name="text">
+     <string>Custom</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>10</y>
+     <width>850</width>
+     <height>570</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QFrame" name="frame_3">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>43</y>
+         <width>780</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>631</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="mouseTracking">
+        <bool>false</bool>
+       </property>
+       <property name="tabletTracking">
+        <bool>false</bool>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+                                stop:0 #ea560a, 
+                                stop:1 #282322);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::NoFrame</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="text">
+        <string>Looking to optimize Windows for basic everyday use?
+Choose this option for a balanced configuration that enhances general performance.</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_4">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>30</y>
+         <width>780</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+                                stop:0 #ea560a, 
+                                stop:1 #282322);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Want the best gaming experience?
+Select this for optimizations focused on game performance and reduced system latency.</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_5">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>15</y>
+         <width>780</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+                                stop:0 #ea560a, 
+                                stop:1 #282322);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Need a setup for work and productivity?
+This option optimizes Windows for professional applications and multitasking.</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_6">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label_4">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>0</y>
+         <width>780</width>
+         <height>70</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>-1</pointsize>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, 
+                                stop:0 #ea560a, 
+                                stop:1 #282322);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+</string>
+       </property>
+       <property name="text">
+        <string>Want complete control?
+Create your own custom optimization profile with advanced settings.</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QToolButton" name="info_butten">
+   <property name="geometry">
+    <rect>
+     <x>1130</x>
+     <y>5</y>
+     <width>30</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="autoFillBackground">
+    <bool>false</bool>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget { 
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>info.png</normaloff>info.png</iconset>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>512</width>
+     <height>512</height>
+    </size>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="bg.qrc"/>
+  <include location="icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>
