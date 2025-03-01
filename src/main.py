@@ -3,7 +3,6 @@ from pathlib import Path
 from PyQt5_UI import run_app, SubWindow
 from app import App
 from pathlib import Path
-from requirements import run
 from logger import Logger
 import ctypes
 import sys
@@ -49,10 +48,6 @@ def main():
         restart_as_admin()
         return
 
-    if (not run()):
-        log.log_error("Failed to install requirements. Exiting...")
-        sys.exit(1)
-        
     try:
         exit_code = run_app(app)  
         sys.exit(exit_code)
