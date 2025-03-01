@@ -24,6 +24,3 @@ To achieve this, run `main.py` as an administrator.
 ## License
 This project is licensed under the [MIT License](LICENSE).
 
-## Contact
-For questions or support, please reach out to [your contact details or GitHub repository].
-
