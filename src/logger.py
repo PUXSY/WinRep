@@ -4,9 +4,9 @@ from pathlib import Path
 from datetime import datetime
 
 base_dir = Path(__file__).parent / "../logs"
-if not base_dir.exists() and not base_dir.is_dir():
+if not base_dir.exists() and base_dir.is_dir():
     print("Not a valid directory path for logs. Using default path.")
-    sys.exit(1)
+    base_dir = Path("./../logs")
 
 class Logger:
     """A class to handle error and info logging with proper file handling and timestamps."""
