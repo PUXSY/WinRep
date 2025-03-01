@@ -7,8 +7,16 @@ import subprocess
 import requests
 import winreg
 from logger import Logger
+from pathlib import Path
 
-log = Logger()
+print("Starting debloat_windows...")
+
+""" Define the base directory for the program """
+base_dir = Path(__file__).resolve().parent.parent
+logs_dir = base_dir / "logs"
+log = Logger(logs_dir)
+
+print("debloat_windows started successfully")
 
 """ Utility function to check if the program is running as administrator """
 def is_running_as_admin():
@@ -33,7 +41,7 @@ if not is_running_as_admin():
     log.log_info("Program is not running as admin. Restarting with admin rights...")
     restart_as_admin()
 
-
+print("Checking admin privileges...")
 
 """ Apply modifications done via the Windows registry """
 def apply_registry_changes():

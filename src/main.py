@@ -7,16 +7,21 @@ from logger import Logger
 import ctypes
 import sys
 
+print("Starting WinRep...")
+
 base_dir = Path(__file__).resolve().parent.parent
 presets_dir = base_dir / "presets"
+logs_dir = base_dir / "logs"
 
 if not presets_dir.exists():
     os.makedirs(presets_dir, exist_ok=True)
 
 
 app = App(presets_dir)
-log = Logger()
+log = Logger(logs_dir)
 
+
+print("WinRep started successfully")
 
 def is_running_as_admin():
     try:
@@ -34,6 +39,8 @@ def restart_as_admin():
         sys.exit()
     except Exception as e:
         log.log_error(f"Error restarting as admin: {e}")
+
+print("Checking admin privileges...")
 
 def main():
     if not is_running_as_admin():
