@@ -1,17 +1,12 @@
 import logging
-import sys
 from pathlib import Path
 from datetime import datetime
+from typing import Optional
 
-
-base_dir = Path(__file__).parent / "../logs"
-if not base_dir.exists() and not base_dir.is_dir():
-    print("Not a valid directory path for logs. Using default path.")
-    sys.exit(1)
 class Logger:
     """A class to handle error and info logging with proper file handling and timestamps."""
     
-    def __init__(self, log_dir: str = base_dir):
+    def __init__(self, log_dir: str = "./../logs"):
         """
         Initialize the logger with a directory for storing log files.
         
