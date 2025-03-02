@@ -8,8 +8,13 @@ from pathlib import Path
 
 log = Logger()
 class App:
-    def __init__(self, presets_path_dir:Path = Path("./../presets")) -> None:
-        self.preset_path_dir: Path = presets_path_dir
+    def __init__(self, presets_path_dir:Path = None) -> None:
+        if presets_path_dir is None:
+            self.preset_path_dir = Path(__file__).parent.parent / "presets"
+        else:
+            self.preset_path_dir = presets_path_dir
+
+        print(f"Using presets directory: {self.preset_path_dir}")
         self.list_of_presets: list = self.Get_presets_list()
     
     def __enter__(self):

@@ -96,12 +96,13 @@ class SubWindow(BaseWindow):
     
     def get_preset_name(self):
         names = {
-            'BasicWindow': 'Basic.json',
-            'GamingWindow': 'Gaming.json',
-            'ProfessionalWindow': 'Professional.json',
+            'BasicWindow': "Basic.json",
+            'GamingWindow': "Gaming.json", 
+            'ProfessionalWindow': "Professional.json",
         }
-        print(names.get(self.__class__.__name__, None))
-        return names.get(self.__class__.__name__, None)
+        preset_name = names.get(self.__class__.__name__, None)
+        print(f"Selected preset: {preset_name}")
+        return preset_name
 
 class BasicWindow(SubWindow):
     def __init__(self, app_instance=None):

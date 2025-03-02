@@ -37,69 +37,111 @@ def get_preset_data(preset_name: str) -> dict:
     except FileNotFoundError:
         log.log_error(f"Error: File '{preset_path_dir}' not found.")
         return None
+
+def install_with_package_manager(package_id: str, manager: str) -> bool:
+    """Install a package using the specified package manager (winget or chocolatey)."""
+    commands = {
+        "winget": ['winget', 'install', '--id', package_id, '-e', '--accept-source-agreements', '--accept-package-agreements'],
+        "choco": ['choco', 'install', package_id, '-y']
+    }
     
+    if manager not in commands:
+        log.log_error(f"Unsupported package manager: {manager}")
+        return False
     
-def install_preset(preset_name: str) -> None:
     try:
-        if not presets_in_list(preset_name):
-            log.log_error(f"Error: Preset '{preset_name}' not found in the list of presets.")
-            return False
-            
-        with open(preset_path_dir / preset_name, 'r', encoding='utf-8') as file:
-            try:
-                preset_data: dict = json.load(file)
-            except json.JSONDecodeError as e:
-                log.log_error(f"Invalid JSON in preset file '{preset_name}': {e}")
-                return False
-            
-        install_list: dict = preset_data.get("Install", [])
-        if not install_list:
-            log.log_warning(f"No applications to install in preset '{preset_name}'")
+        process = subprocess.Popen(
+            commands[manager],
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            text=True
+        )
+        stdout, stderr = process.communicate()
+        
+        if process.returncode == 0:
+            log.log_info(f"Successfully installed {package_id} using {manager}")
             return True
-        # set up app so i can use .get fr
-        app: dict
+        else:
+            log.log_error(f"Error installing {package_id} with {manager}: {stderr}")
+            return False
+    except Exception as e:
+        log.log_error(f"Error installing {package_id} with {manager}: {e}")
+        return False
+    
+def install_preset(preset_name: str) -> bool:
+    """Install applications from the specified preset."""
+    try:
+        # Convert preset_name to a Path object
+        preset_path = Path(preset_name)
+        
+        # Check if the file exists directly
+        if not preset_path.exists():
+            # If not, try checking if it's in the presets directory
+            preset_path = preset_path_dir / preset_name
+            if not preset_path.exists():
+                log.log_error(f"Error: Preset file not found at '{preset_path}'")
+                return False
+        
+        # Load and parse preset file
+        try:
+            with open(preset_path, 'r', encoding='utf-8') as file:
+                preset_data = json.load(file)
+        except json.JSONDecodeError as e:
+            log.log_error(f"Invalid JSON in preset file '{preset_path}': {e}")
+            return False
+        
+        # Get list of applications to install
+        install_list = preset_data.get("Install", [])
+        if not install_list:
+            log.log_warning(f"No applications to install in preset '{preset_path.name}'")
+            return True
+        
+        # Install each application
         for app in install_list:
             app_name = app.get("name", "Unknown application")
             winget_id = app.get("winget")
             choco_id = app.get("choco")
             
-            log.log_info(f"Installing {app_name if app_name != 'Unknown application' else winget_id or choco_id}...")
+            display_name = app_name if app_name != "Unknown application" else winget_id or choco_id
+            log.log_info(f"Installing {display_name}...")
             
             # Try winget first if available
             if winget_id:
                 try:
-                    result = subprocess.run(
+                    process = subprocess.Popen(
                         ['winget', 'install', '--id', winget_id, '-e', '--accept-source-agreements', '--accept-package-agreements'],
-                        check=False,
-                        capture_output=True,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
                         text=True
                     )
+                    stdout, stderr = process.communicate()
                     
-                    if result.returncode == 0:
+                    if process.returncode == 0:
                         log.log_info(f"Successfully installed {winget_id} using winget")
                         continue  # Skip chocolatey if winget succeeds
                     else:
-                        log.log_error(f"Error installing {winget_id} with winget: {result.stderr}")
+                        log.log_error(f"Error installing {winget_id} with winget: {stderr}")
                 except Exception as e:
                     log.log_error(f"Error installing {winget_id} with winget: {e}")
             
             # Try chocolatey if winget failed or wasn't available
             if choco_id:
                 try:
-                    result = subprocess.run(
+                    process = subprocess.Popen(
                         ['choco', 'install', choco_id, '-y'],
-                        check=False,
-                        capture_output=True,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.PIPE,
                         text=True
                     )
+                    stdout, stderr = process.communicate()
                     
-                    if result.returncode == 0:
+                    if process.returncode == 0:
                         log.log_info(f"Successfully installed {choco_id} using chocolatey")
                     else:
-                        log.log_error(f"Error installing {choco_id} with chocolatey: {result.stderr}")
+                        log.log_error(f"Error installing {choco_id} with chocolatey: {stderr}")
                 except Exception as e:
                     log.log_error(f"Error installing {choco_id} with chocolatey: {e}")
-            
+        
         return True
 
     except Exception as e:
